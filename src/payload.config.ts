@@ -27,8 +27,17 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString: process.env.DATABASE_URL || process.env.DATABASE_URI || '',
+      ssl:
+        process.env.NODE_ENV === 'production'
+          ? { rejectUnauthorized: false }
+          : undefined,
     },
+    // Auto-syncs the database schema to match the collections below, so tables
+    // exist without needing to run formal migrations. Fine for this stage of the
+    // project; switch to `payload migrate` once the schema is stable and this is
+    // handling real user data.
+    push: true,
   }),
   // Uncomment once you add @payloadcms/storage-vercel-blob and set BLOB_READ_WRITE_TOKEN,
   // so uploaded audio survives on Vercel's ephemeral filesystem:

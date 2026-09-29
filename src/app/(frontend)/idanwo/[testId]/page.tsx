@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import { getPayloadClient } from '@/lib/getPayloadClient'
 import TestRunner from '@/components/TestRunner'
 
+export const dynamic = 'force-dynamic'
+
 export default async function TestPage({ params }: { params: Promise<{ testId: string }> }) {
   const { testId } = await params
   const payload = await getPayloadClient()
