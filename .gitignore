@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+*.log
+media/
+src/payload-types.ts
+README.md
