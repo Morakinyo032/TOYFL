@@ -157,7 +157,14 @@ export default function TestRunner({ test, sections }: { test: any; sections: Se
         Ìbéèrè {itemIdx + 1} nínú {currentSection.items.length} · <span className="timer">{formatTime(secondsLeft)}</span> ku
       </p>
       <div className="progress">
-        <div style={{ width: `${progressPct}%` }} />
+        {sections.map((sec, i) => {
+          const fillPct = i < sectionIdx ? 100 : i === sectionIdx ? progressPct : 0
+          return (
+            <div key={sec.id} title={SECTION_LABEL[sec.type]}>
+              <span style={{ width: `${fillPct}%` }} />
+            </div>
+          )
+        })}
       </div>
 
       <div className="card">

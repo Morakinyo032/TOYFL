@@ -6,4 +6,3 @@ out/
 *.log
 media/
 src/payload-types.ts
-README.md

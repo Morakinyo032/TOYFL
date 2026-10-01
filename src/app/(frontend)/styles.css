@@ -1,9 +1,13 @@
 :root {
-  --brand: #0f6b3e;
-  --bg: #fafaf8;
-  --text: #1a1a1a;
-  --muted: #6b6b6b;
-  --border: #e2e2e2;
+  --bg: #f5efe2;
+  --bg-card: #fbf8f1;
+  --ink: #1e2a38;
+  --indigo: #27425e;
+  --indigo-deep: #16263a;
+  --ochre: #c68a2e;
+  --osun: #9c4a2d;
+  --border: #ddd0b8;
+  --muted: #6e6354;
 }
 
 * {
@@ -12,35 +16,105 @@
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Noto Sans', system-ui, sans-serif;
   background: var(--bg);
-  color: var(--text);
+  color: var(--ink);
+}
+
+h1, h2, .display {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.4rem;
 }
 
 .wrap {
   max-width: 760px;
   margin: 0 auto;
-  padding: 2rem 1.25rem;
+  padding: 2rem 1.25rem 3rem;
 }
 
+/* --- Header --- */
+.site-header {
+  background: var(--indigo-deep);
+  color: #f5efe2;
+  padding: 1rem 1.25rem;
+}
+
+.site-header .inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.site-header .wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f5efe2;
+  text-decoration: none;
+}
+
+/* --- Hero (home page only - the one bold decorative moment) --- */
+.hero {
+  position: relative;
+  padding: 2.5rem 1.25rem 2rem;
+  overflow: hidden;
+}
+
+.hero-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+}
+
+/* --- Cards: accent-border treatment instead of rounded-shadow kit --- */
 .card {
-  background: #fff;
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-bottom: 1.25rem;
+  border-left: 4px solid var(--ochre);
+  border-radius: 4px;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.1rem;
 }
 
+.card.quiet {
+  border-left-color: var(--border);
+}
+
+/* --- Buttons --- */
 .btn {
   display: inline-block;
-  background: var(--brand);
-  color: #fff;
+  background: var(--indigo);
+  color: #fbf8f1;
   padding: 0.65rem 1.4rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 3px;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--indigo-deep);
 }
 
 .btn:disabled {
@@ -50,15 +124,17 @@ body {
 
 .btn.secondary {
   background: transparent;
-  color: var(--brand);
-  border: 1px solid var(--brand);
+  color: var(--indigo);
+  border: 1px solid var(--indigo);
 }
 
 .timer {
   font-weight: 600;
-  color: var(--brand);
+  color: var(--osun);
+  font-variant-numeric: tabular-nums;
 }
 
+/* --- Answer options --- */
 .option {
   display: block;
   width: 100%;
@@ -66,15 +142,18 @@ body {
   padding: 0.75rem 1rem;
   margin-bottom: 0.6rem;
   border: 1px solid var(--border);
-  border-radius: 8px;
-  background: #fff;
+  border-left: 3px solid transparent;
+  border-radius: 3px;
+  background: var(--bg-card);
   cursor: pointer;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1rem;
+  color: var(--ink);
 }
 
 .option.selected {
-  border-color: var(--brand);
-  background: #eefaf2;
+  border-left-color: var(--ochre);
+  background: #f3e6cd;
 }
 
 .muted {
@@ -82,15 +161,23 @@ body {
   font-size: 0.9rem;
 }
 
+/* --- Progress: segmented "woven band", one block per section --- */
 .progress {
-  height: 6px;
-  background: var(--border);
-  border-radius: 3px;
-  overflow: hidden;
+  display: flex;
+  gap: 4px;
   margin-bottom: 1.5rem;
 }
 
 .progress > div {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress > div > span {
+  display: block;
   height: 100%;
-  background: var(--brand);
+  background: var(--indigo);
 }
