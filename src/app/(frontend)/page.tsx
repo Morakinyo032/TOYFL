@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import AdirePanel from '@/components/AdirePanel'
 
 const SECTIONS = [
   {
@@ -42,8 +43,13 @@ export default function HomePage() {
             Ìdánwò kíkọ́ èdè Yorùbá tí a ṣe gẹ́gẹ́ bí ìlànà TOEFL, fún àwọn tí ń kọ́ èdè náà tàbí
             tí ó ti mọ̀ ọ́ dáadáa.
           </p>
+          <p className="muted" style={{ fontSize: '0.85rem' }}>
+            YPCE ni Yoruba Proficiency Certificate Examination, orúkọ kíkún ìdánwò yìí.
+          </p>
         </div>
       </section>
+
+      <AdirePanel />
 
       <main className="wrap">
         <h2>Kí ni ìdánwò yìí?</h2>

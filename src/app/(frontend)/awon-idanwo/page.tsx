@@ -15,6 +15,9 @@ export default async function ExamListPage() {
 
   return (
     <main className="wrap">
+      <Link href="/" className="muted" style={{ display: 'inline-block', marginBottom: '1rem' }}>
+        ← Padà sí Ilé
+      </Link>
       <h1>Àwọn Ìdánwò Tó Wà</h1>
       <p className="muted">Yan ìdánwò tí o fẹ́ ṣe nínú àtòjọ yìí.</p>
 

@@ -4,7 +4,7 @@ import Wordmark from '@/components/Wordmark'
 import './styles.css'
 
 export const metadata = {
-  title: 'Ìdánwò Yorùbá',
+  title: 'YPCE — Yoruba Proficiency Certificate Examination',
   description: 'Ìdánwò ìwọ̀n Yorùbá tí a ṣe lápẹẹrẹ ọ̀nà TOEFL',
 }
 
