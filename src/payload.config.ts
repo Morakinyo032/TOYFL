@@ -9,6 +9,7 @@ import { Sections } from './collections/Sections'
 import { Items } from './collections/Items'
 import { Media } from './collections/Media'
 import { Users } from './collections/Users'
+import { Homepage } from './globals/Homepage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -20,6 +21,7 @@ export default buildConfig({
     // test-taking pages under src/app/(frontend) are in Yoruba.
   },
   collections: [Users, Tests, Sections, Items, Media],
+  globals: [Homepage],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
