@@ -25,7 +25,7 @@ export function Logo() {
           letterSpacing: '-0.01em',
         }}
       >
-        YPCE
+        SYLPT
       </span>
     </div>
   )

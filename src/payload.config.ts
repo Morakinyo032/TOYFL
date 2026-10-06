@@ -19,9 +19,9 @@ export default buildConfig({
     user: Users.slug,
     // Admin UI stays in English (Payload's default) - only the public
     // test-taking pages under src/app/(frontend) are in Yoruba. Branding
-    // (logo/icon/tab title) is swapped to YPCE below.
+    // (logo/icon/tab title) is swapped to SYLPT below.
     meta: {
-      titleSuffix: '- YPCE',
+      titleSuffix: '- SYLPT',
     },
     importMap: {
       baseDir: path.resolve(dirname),
