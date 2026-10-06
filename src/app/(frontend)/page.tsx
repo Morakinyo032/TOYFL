@@ -33,12 +33,83 @@ export default async function HomePage() {
         <h2>{content.introHeading}</h2>
         <p>{content.introBody}</p>
 
+        {/* Stats strip */}
+        {(content.stats?.length ?? 0) > 0 && (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '0',
+              margin: '1.5rem 0 2rem',
+              border: '1px solid var(--border)',
+              borderRadius: '4px',
+              overflow: 'hidden',
+              background: 'var(--bg-card)',
+            }}
+          >
+            {content.stats?.map((stat: any, i: number) => (
+              <div
+                key={stat.id || stat.label}
+                style={{
+                  flex: 1,
+                  textAlign: 'center',
+                  padding: '1.1rem 0.5rem',
+                  borderLeft: i === 0 ? 'none' : '1px solid var(--border)',
+                }}
+              >
+                <div className="display" style={{ fontSize: '1.6rem', margin: 0, color: 'var(--indigo)' }}>
+                  {stat.value}
+                </div>
+                <div className="muted" style={{ fontSize: '0.8rem' }}>
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
         {content.sections?.map((sec: any) => (
           <div className="card quiet" key={sec.id || sec.label}>
             <h2>{sec.label}</h2>
             <p className="muted">{sec.body}</p>
           </div>
         ))}
+
+        {/* Scoring bands */}
+        {(content.scoringBands?.length ?? 0) > 0 && (
+          <>
+            <h2>{content.scoringHeading}</h2>
+            {content.scoringBands?.map((band: any) => (
+              <div className="card quiet" key={band.id || band.bandName} style={{ display: 'flex', gap: '1rem', alignItems: 'baseline' }}>
+                <strong style={{ fontFamily: 'Fraunces, serif', color: 'var(--ochre)', minWidth: '4.5rem' }}>
+                  {band.rangeLabel}
+                </strong>
+                <div>
+                  <strong>{band.bandName}</strong>
+                  <p className="muted" style={{ margin: '0.2rem 0 0' }}>
+                    {band.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+
+        {/* How to prepare */}
+        {(content.tips?.length ?? 0) > 0 && (
+          <>
+            <h2>{content.tipsHeading}</h2>
+            <div className="card quiet">
+              <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
+                {content.tips?.map((tip: any) => (
+                  <li key={tip.id || tip.text} style={{ marginBottom: '0.5rem' }}>
+                    {tip.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </>
+        )}
 
         <h2>{content.notesHeading}</h2>
         <div className="card quiet">
@@ -48,6 +119,21 @@ export default async function HomePage() {
             </p>
           ))}
         </div>
+
+        {/* FAQ */}
+        {(content.faqs?.length ?? 0) > 0 && (
+          <>
+            <h2>{content.faqHeading}</h2>
+            {content.faqs?.map((faq: any) => (
+              <details key={faq.id || faq.question} className="card quiet" style={{ cursor: 'pointer' }}>
+                <summary style={{ fontWeight: 600 }}>{faq.question}</summary>
+                <p className="muted" style={{ marginBottom: 0, marginTop: '0.6rem' }}>
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </>
+        )}
 
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <Link className="btn" href="/awon-idanwo">
