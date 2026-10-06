@@ -82,6 +82,30 @@ h2 {
 
 .hero-content {
   position: relative;
+  max-width: 920px;
+}
+
+.hero-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1 1 320px;
+}
+
+.hero-image {
+  flex: 1 1 280px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid var(--border);
 }
 
 /* --- Cards: accent-border treatment instead of rounded-shadow kit --- */

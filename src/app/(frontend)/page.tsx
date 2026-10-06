@@ -19,11 +19,18 @@ export default async function HomePage() {
           <rect width="100%" height="100%" fill="url(#adire-dots)" />
         </svg>
         <div className="wrap hero-content" style={{ paddingTop: 0, paddingBottom: 0 }}>
-          <h1>{content.heroTitle}</h1>
-          <p className="muted">{content.heroSubtitle}</p>
-          <p className="muted" style={{ fontSize: '0.85rem' }}>
-            {content.heroFullName}
-          </p>
+          <div className="hero-grid">
+            <div className="hero-text">
+              <h1>{content.heroTitle}</h1>
+              <p className="muted">{content.heroSubtitle}</p>
+              <p className="muted" style={{ fontSize: '0.85rem' }}>
+                {content.heroFullName}
+              </p>
+            </div>
+            <div className="hero-image">
+              <img src="/images/hero.jpg" alt="Akẹ́kọ̀ọ́ kan tí ó ń lo kọ̀mpútà alágbèéká láti kọ́ èdè Yorùbá" />
+            </div>
+          </div>
         </div>
       </section>
 

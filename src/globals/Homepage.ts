@@ -23,7 +23,7 @@ export const Homepage: GlobalConfig = {
       name: 'heroFullName',
       type: 'textarea',
       label: 'Hero full-name line (Yoruba, small text under the subtitle)',
-      defaultValue: 'SYLPT ni Standard Yoruba Language Proficiency Test, orúkọ kíkún ìdánwò yìí.',
+      defaultValue: 'YPCE ni Yoruba Proficiency Certificate Examination, orúkọ kíkún ìdánwò yìí.',
     },
     {
       name: 'introHeading',

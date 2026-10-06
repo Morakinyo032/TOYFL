@@ -21,7 +21,7 @@ export default function Wordmark({ withLabel = true }: { withLabel?: boolean }) 
         <path d="M14 4V24M4 14H24" stroke="#f5efe2" strokeWidth="1.2" />
         <circle cx="14" cy="14" r="2" fill="#c68a2e" />
       </svg>
-      {withLabel && <span className="wordmark">SYLPT</span>}
+      {withLabel && <span className="wordmark">YPCE</span>}
     </span>
   )
 }
